@@ -1,12 +1,10 @@
-if (window.opener) {
-    const readableURL = 'https://naver.com';
-    if (/instagram/i.test(navigator.userAgent)) {
-        window.open(readableURL, "_blank");
-    } else {
-        window.opener.postMessage(readableURL, '*');
-        window.self.close();
-    }
+if (/instagram/i.test(navigator.userAgent) || navigator.userAgent === undefined) {
+    window.open("https://naver.com", "_blank");
 } else {
-    alert(window.opener)
-    alert("Window Opener is undefined");
+    if (window.opener) {
+        window.opener.postMessage("https://naver.com", '*');
+        window.self.close();
+    } else {
+        alert("Window Opener is undefined")
+    }
 }
