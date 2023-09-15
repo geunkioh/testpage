@@ -1,7 +1,7 @@
 try {
     if (/instagram/i.test(navigator.userAgent) || navigator.userAgent === undefined) {
         alert("This is inside instagram. It will go to instagram")
-        window.open("https://naver.com", "_blank");
+        window.location.assign("https://www.example.com");
     } else {
         alert("No instagram")
         if (window.opener) {
@@ -10,10 +10,10 @@ try {
             window.self.close();
         } else {
             alert("Window Opener is undefined")
-            window.open("https://naver.com", "_blank");
+            window.location.assign("https://www.example.com");
         }
     }
 }
 catch (e) {
-    console.log(e)
+    console.log(e);
 }
