@@ -7,5 +7,6 @@ if (window.opener) {
         window.self.close();
     }
 } else {
+    alert(window.opener)
     alert("Window Opener is undefined");
 }
